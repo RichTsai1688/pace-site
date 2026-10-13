@@ -1,12 +1,11 @@
-// Base map for every page: Esri Light Gray (clean background) with Esri reference labels on top.
-// No API key is needed. Labels exist only up to zoom 17, so the map stops at 17. Attribution must stay visible. For school-wide or many-class use, check the Esri
-// terms and consider a school-hosted tile service; change the layers here only.
+// Base map for every page: OpenStreetMap standard tiles, the same source as the original campus map.
+// Light use only. For school-wide or many-class use, switch to a school-hosted or licensed tile service
+// and keep the attribution text.
 window.PACE_TILE={
-  maxZoom:17,
-  attribution:'Tiles © Esri，Esri、HERE、Garmin 等供應者；地圖資料 © OpenStreetMap contributors',
+  maxZoom:19,
+  attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   layers:[
-    {url:'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',maxNativeZoom:16},
-    {url:'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Reference/MapServer/tile/{z}/{y}/{x}',maxNativeZoom:17}
+    {url:'https://tile.openstreetmap.org/{z}/{x}/{y}.png'}
   ]
 };
 // Adds the base layers to a map and returns the first (base) tile layer so callers can listen for tile errors.
